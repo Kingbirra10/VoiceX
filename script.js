@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const firebaseConfig = {
-        apiKey: "AIzaSyApB6S9bKjmPb-_STg9vEGaCU2GRoxhzpw",
-        authDomain: "voice-x-266cf.firebaseapp.com",
+        apiKey: "w",
+        authDomain: "",
         projectId: "voice-x-266cf",
         storageBucket: "voice-x-266cf.firebasestorage.app",
         messagingSenderId: "161056489530",
