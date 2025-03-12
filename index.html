@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Graba voz y publica en X con múltiples idiomas.">
+    <title>Grabar y Publicar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="branding">
+            <a href="#" class="logo-link" id="logoButton">
+                <img src="images/logo-voicex.png" alt="VoiceX Logo" class="logo">
+            </a>
+            <h1 id="welcomeText">¡Empieza a Hablar!</h1>
+            <button id="languageButton">
+                <span id="languageButtonText">🇪🇸 ES</span>
+                <div id="languageDropdown" class="dropdown-content">
+                    <div class="dropdown-item" data-lang="zh">🇨🇳 中文 (Chino Mandarín)</div>
+                    <div class="dropdown-item" data-lang="hi">🇮🇳 हिन्दी (Hindi)</div>
+                    <div class="dropdown-item" data-lang="es">🇪🇸 Español</div>
+                    <div class="dropdown-item" data-lang="fr">🇫🇷 Français (Francés)</div>
+                    <div class="dropdown-item" data-lang="en">🇬🇧 English (Inglés)</div>
+                </div>
+            </button>
+        </div>
+        <div id="authSection">
+            <div id="userInfo">
+                <img id="userPhoto" src="images/default-user.png" alt="Foto de perfil" class="user-photo">
+                <p id="userName">Bienvenido, Invitado</p>
+            </div>
+            <button id="loginButton">Iniciar sesión con Google</button>
+            <button id="logoutButton" class="hidden">Cerrar sesión</button>
+            
+        </div>
+        
+        <div id="recordingSection" class="hidden">
+            <button id="recordButton"><i class="fas fa-microphone"></i> <span id="recordButtonText">Grabar</span></button>
+            <button id="stopButton" class="hidden"><i class="fas fa-stop"></i> <span id="stopButtonText">Detener</span></button>
+            <div id="output" class="output hidden"></div>
+            <div id="timeline" class="timeline hidden"></div>
+            <div id="timer" class="timer hidden"><span id="seconds">20</span>s</div>
+        </div>
+        <p><a href="mailto:voicex.bussines@gmail.com" target="_blank" class="contact-link" id="contactLink">Contacto</a></p>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script defer src="script.js"></script>
+</body>
+</html>

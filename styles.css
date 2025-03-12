@@ -1,0 +1,533 @@
+/* Estilos base */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #0a0c10;
+    color: #ffffff;
+}
+
+/* Contenedores principales */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #16181c;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Branding (Logo, Título y Botón de idioma) */
+.branding {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 156px; /* Aumentado un 30% desde 120px */
+    height: auto;
+    margin-bottom: 10px; /* Espacio entre logo y texto */
+}
+
+.logo-link {
+    display: inline-block; /* Para que el enlace contenga la imagen */
+    cursor: pointer; /* Indicador de clic */
+    text-decoration: none; /* Quitar subrayado */
+    border: none; /* Sin borde por defecto */
+    background: none; /* Sin fondo por defecto */
+    padding: 0; /* Sin padding adicional */
+}
+
+.logo-link:hover .logo {
+    opacity: 0.8; /* Efecto hover para indicar que es clicable */
+    transition: opacity 0.3s ease;
+}
+
+#welcomeText {
+    font-size: 28px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#authSection {
+    text-align: center;
+}
+
+#recordingSection {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #e1e8ed;
+}
+
+.user-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+#userName {
+    font-size: 16px;
+    color: #e1e8ed;
+    margin: 0;
+}
+
+/* Estilos para encabezados */
+.output-title {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Clase base para botones */
+.button {
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 0.2);
+}
+
+/* Botones de autenticación */
+#loginButton, #logoutButton {
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    background: linear-gradient(145deg, #34b7d5, #002dff);
+    border: 1px solid rgba(52, 183, 213, 0.5);
+}
+
+#loginButton:hover {
+    background: linear-gradient(145deg, #2c9fbf, #001ecc);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 45, 255, 0.4);
+}
+
+#logoutButton {
+    background: linear-gradient(145deg, #34b7d5, #002dff);
+}
+
+#logoutButton:hover {
+    background: linear-gradient(145deg, #2c9fbf, #001ecc);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 45, 255, 0.4);
+}
+
+/* Botones de grabación con estilo metálico */
+#recordButton, #stopButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 50%;
+    margin: 0;
+    flex-direction: column;
+    gap: 5px;
+    color: #333;
+    background: radial-gradient(circle at center,
+        #ffffff 0%,
+        #e0e0e0 30%,
+        #b0b0b0 60%,
+        #909090 100%
+    );
+    border: 2px solid #808080;
+    box-shadow: 
+        inset 0 0 20px rgba(255, 255, 255, 0.8),
+        inset 0 0 20px rgba(255, 255, 255, 0.4),
+        inset 0 -5px 15px rgba(0, 0, 0, 0.1),
+        0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    transform: perspective(1000px) translateZ(0);
+}
+
+#recordButton:hover, #stopButton:hover {
+    transform: perspective(1000px) translateZ(10px) scale(1.05);
+    box-shadow: 
+        inset 0 0 25px rgba(255, 255, 255, 0.9),
+        inset 0 0 25px rgba(255, 255, 255, 0.5),
+        inset 0 -5px 20px rgba(0, 0, 0, 0.15),
+        0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+#recordButton:active, #stopButton:active {
+    transform: perspective(1000px) translateZ(5px) scale(0.95);
+    box-shadow: 
+        inset 0 0 15px rgba(0, 0, 0, 0.2),
+        inset 0 0 15px rgba(0, 0, 0, 0.1),
+        0 2px 10px rgba(0, 0, 0, 0.2);
+    background: radial-gradient(circle at center,
+        #e0e0e0 0%,
+        #d0d0d0 30%,
+        #a0a0a0 60%,
+        #808080 100%
+    );
+}
+
+#recordButton i, #stopButton i {
+    font-size: 24px;
+    color: #444;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+#recordButtonText, #stopButtonText {
+    font-size: 14px;
+    color: #444;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+/* Ajuste para el estado oculto */
+#recordButton.hidden, #stopButton.hidden {
+    display: none;
+}
+
+/* Botón de cambio de idioma */
+#languageButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 6px 12px;
+    font-size: 14px;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #34b7d5, #002dff);
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(52, 183, 213, 0.5);
+    display: inline-block;
+}
+
+#languageButton:hover {
+    background: linear-gradient(145deg, #2c9fbf, #001ecc);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 45, 255, 0.4);
+}
+
+/* Menú desplegable */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #16181c;
+    min-width: 160px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 10px 15px;
+    color: #ffffff;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #2f3336;
+}
+
+/* Botones de acción (Copiar, Volver a grabar, Ir a X) */
+.copy-button, .button-style {
+    font-weight: 600;
+    background: linear-gradient(145deg, #34b7d5, #002dff);
+    color: #ffffff;
+    border: 1px solid rgba(52, 183, 213, 0.5);
+}
+
+.copy-button {
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+.copy-button:hover {
+    background: linear-gradient(145deg, #2c9fbf, #001ecc);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 45, 255, 0.4);
+}
+
+.button-style {
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #34b7d5, #002dff);
+    color: #ffffff;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin: 5px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    font-family: inherit;
+    border: 1px solid rgba(52, 183, 213, 0.5);
+}
+
+.button-style:hover {
+    background: linear-gradient(145deg, #2c9fbf, #001ecc);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 45, 255, 0.4);
+}
+
+/* Contenedor de salida y bloques de texto */
+.output {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    min-height: 300px;
+}
+
+.output .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+    width: auto;
+    min-width: 320px;
+}
+
+/* Contenedor de salida y bloques de texto */
+.text-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1c1e21;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 100%;
+    min-height: 250px;
+}
+
+.text-content {
+    flex-grow: 1;
+    margin-right: 15px;
+    word-wrap: break-word;
+    color: #e1e8ed;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.editable-text {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #1c1e21;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    color: #e1e8ed;
+    resize: none;
+    overflow: hidden;
+    line-height: 1.5;
+    min-height: 250px;
+    max-height: none;
+    word-wrap: break-word;
+}
+
+.editable-text:focus {
+    outline: none;
+    border-color: rgba(52, 183, 213, 0.5);
+    box-shadow: 0 0 5px rgba(52, 183, 213, 0.5);
+}
+
+/* Clase para ocultar elementos */
+.hidden {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 15px;
+        min-height: 600px;
+    }
+
+    .branding {
+        margin-bottom: 15px;
+    }
+
+    .logo {
+        max-width: 130px; /* Reducir tamaño en móviles (30% más que 100px) */
+        margin-bottom: 5px;
+    }
+
+    #welcomeText {
+        font-size: 24px;
+    }
+
+    #languageButton {
+        padding: 6px 12px;
+        font-size: 14px;
+        position: static;
+        margin-top: 10px;
+    }
+
+    #recordingSection {
+        gap: 15px;
+    }
+
+    #recordButton, #stopButton {
+        width: 90px;
+        height: 90px;
+    }
+
+    #recordButtonText, #stopButtonText {
+        font-size: 12px;
+    }
+
+    .output .button-container {
+        gap: 8px;
+        min-width: 300px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-block {
+        padding: 10px;
+        flex-direction: column;
+        align-items: stretch;
+        min-height: 300px;
+    }
+
+    .text-content {
+        font-size: 14px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .copy-button {
+        padding: 6px 12px;
+        font-size: 13px;
+        align-self: center;
+    }
+
+    .button-style {
+        width: 140px;
+        height: 36px;
+        line-height: 36px;
+        font-size: 12px;
+    }
+
+    .editable-text {
+        font-size: 14px;
+        min-height: 300px;
+    }
+
+    .dropdown-content {
+        right: 0;
+        width: 150px;
+    }
+}
+
+/* Estilos para la línea de tiempo */
+.timeline {
+    width: 100%;
+    height: 8px;
+    background-color: #2f3336;
+    position: relative;
+    margin-top: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    display: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.timeline.show {
+    display: block;
+}
+
+.timeline::after {
+    content: '';
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, #34b7d5, #002dff);
+    width: var(--width, 0%);
+    transition: width 0.6s ease;
+}
+
+/* Estilos para el contador */
+.timer {
+    margin-top: 8px;
+    font-size: 18px; /* Aumentado de 14px a 18px para mayor visibilidad */
+    color: #34b7d5; /* Color más vibrante para destacar */
+    font-weight: 700; /* Negrita para mayor énfasis */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Sombra ligera para legibilidad */
+}
+
+.timer #seconds {
+    color: #34b7d5; /* Mantiene el color del número */
+    margin-left: 5px;
+    font-size: 24px; /* Aumenta el tamaño del número de segundos específicamente */
+}
+
+.timer.hidden {
+    display: none;
+}
+
+.timer.show {
+    display: block;
+}
+
+.contact-link {
+    font-size: 14px;
+    color: #34b7d5; /* Color similar a los botones */
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.contact-link:hover {
+    color: #2c9fbf; /* Cambio de color al pasar el mouse */
+    text-decoration: underline;
+}
